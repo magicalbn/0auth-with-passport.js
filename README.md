@@ -8,5 +8,6 @@
 !configs folder not added for security reasons 
 
 Passport.js ===> http://www.passportjs.org/
-Famework: React,Next,Express,Passport.js
+
+Famework: React, Next, Express, Passport.js
 
