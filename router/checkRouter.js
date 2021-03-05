@@ -4,7 +4,7 @@ let router = express.Router();
 
 router.get('/',(req,res)=>{
     const {user} = req
-    console.log("requestd")
+    
     if(user){
        
         let data={
