@@ -2,6 +2,7 @@ const express = require('express');
 const { json, response } = require('express');
 const { Cookie } = require('express-session');
 const { getCookieParser } = require('next/dist/next-server/server/api-utils');
+const bodyParser = require("body-parser");
 
 let router = express.Router();
 const passport = require('passport')
@@ -58,7 +59,23 @@ router.get('/facebook/callback',
 )
 //==========================================================
 
+// router.get('/ftp_portal/saml/consume', passport.authenticate('saml'));
+router.get('/sso',
+  passport.authenticate('saml', { successRedirect: '/home', failureRedirect: '/failed', failureFlash: true }),
+  function(req, res) {
+    res.redirect('/');
+  }
+);
 
+router.post('/sso/callback',
+bodyParser.urlencoded({ extended: false }),
+
+  passport.authenticate('saml', { successRedirect: '/home', failureRedirect: '/failed', failureFlash: true }),
+  function(req, res) {
+    console.log("heyyyy",req)
+    res.redirect('/');
+  }
+);
 
 router.get('/logout', function (req, res) {
     req.logOut();

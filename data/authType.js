@@ -28,6 +28,13 @@ const authType = [
         logo: 'static/github-brands.svg',
         link: 'auth/github'
     }
+    ,
+    {
+        id: 5,
+        provider: "saml",
+        logo: 'static/github-brands.svg',
+        link: 'auth/sso'
+    }
 ]
 
 export default authType
