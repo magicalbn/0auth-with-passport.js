@@ -92,9 +92,9 @@ app.prepare().then(() => {
 
 
 
-    server.get('/home', (req, res, next) => {
-        next()
-    })
+    // server.get('/home', (req, res, next) => {
+    //     next()
+    // })
 
     server.get('/json', (req, res) => {
         res.json({
