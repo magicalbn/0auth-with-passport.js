@@ -1,7 +1,8 @@
-const path = require('./path')
+const path = require("./path");
+require("dotenv").config();
 
-module.exports={
-    consumerKey: 'hWSjzoYlgiUPIpaHjB94a6gkC',
-    consumerSecret: 'IK1l2bAT6Mh9gxG3kF0Gu4oWgEV9oyNQb9exiXfFgNSs6vx887',
-    callbackURL: `${path}/auth/twitter/callback`
-  }
+module.exports = {
+    consumerKey: process.env.TWITTER_CONSUMER_KEY,
+    consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
+    callbackURL: `${path}/auth/twitter/callback`,
+};

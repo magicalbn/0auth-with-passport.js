@@ -1,7 +1,8 @@
-const path = require('./path')
+const path = require("./path");
+require("dotenv").config();
 module.exports = {
-    clientID: '169619143642-7dso7vc8qvkja039s2u2di631343kguu.apps.googleusercontent.com',
-    clientSecret: 'SiajT2g2JenUB9iw_kO-jleb',
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     callbackURL: `${path}/auth/google/callback`,
-    passReqToCallback : true
-}
+    passReqToCallback: true,
+};

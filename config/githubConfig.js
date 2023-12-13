@@ -1,6 +1,7 @@
-const path = require('./path')
+const path = require("./path");
+require("dotenv").config();
 module.exports = {
-    clientID: '187d481fea3a7f8b3ef7',
-    clientSecret: '515a5edb7674dc63f8d5b1475af80d5278249616',
-    callbackURL: `${path}/auth/github/callback`
-  }
+    clientID: process.env.GITHUB_CLIENT_ID,
+    clientSecret: process.env.GITHUB_CLIENT_SECRET,
+    callbackURL: `${path}/auth/github/callback`,
+};
